@@ -6,11 +6,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TestObject1.h"
+
+static void testDeallocSimple(){
+    TestObject1 *obj1 = [TestObject1 new];
+    NSLog(@"%@",obj1);
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        testDeallocSimple();
     }
     return 0;
 }
