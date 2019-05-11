@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "TestObject1.h"
 #import "TestObject2.h"
+#import "TestObjectWithProperty.h"
 
 static void testDeallocSimple(){
     TestObject1 *obj1 = [TestObject1 new];
@@ -19,10 +20,16 @@ static void testDeallocCustomSubClass(){
     NSLog(@"%@",obj2);
 }
 
+static void testDeallocWithProperty(){
+    TestObjectWithProperty *obj3 = [[TestObjectWithProperty alloc] init];
+    NSLog(@"%@",obj3);
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 //        testDeallocSimple();
-        testDeallocCustomSubClass();
+//        testDeallocCustomSubClass();
+        testDeallocWithProperty();
     }
     return 0;
 }
