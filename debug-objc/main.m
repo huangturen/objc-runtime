@@ -9,6 +9,7 @@
 #import "TestObject1.h"
 #import "TestObject2.h"
 #import "TestObjectWithProperty.h"
+#import "TestObjectWithProperty+test.h"
 
 static void testDeallocSimple(){
     TestObject1 *obj1 = [TestObject1 new];
@@ -21,7 +22,11 @@ static void testDeallocCustomSubClass(){
 }
 
 static void testDeallocWithProperty(){
+    NSNumber *obj4 = @(2);
+    obj4 = nil;
+    
     TestObjectWithProperty *obj3 = [[TestObjectWithProperty alloc] init];
+    [obj3 testCategoryMethod];
     NSLog(@"%@",obj3);
 }
 
