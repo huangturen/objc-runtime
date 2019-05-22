@@ -10,6 +10,8 @@
 #import "TestObject2.h"
 #import "TestObjectWithProperty.h"
 #import "TestObjectWithProperty+test.h"
+#import "TestBlockWithWeak.h"
+#import "TestBlockStructure.h"
 
 static void testDeallocSimple(){
     TestObject1 *obj1 = [TestObject1 new];
@@ -30,11 +32,30 @@ static void testDeallocWithProperty(){
     NSLog(@"%@",obj3);
 }
 
+static void testWeakBlock(){
+    TestBlockWithWeak *weakBlock = [[TestBlockWithWeak alloc] init];
+    [weakBlock method1];
+    [weakBlock method2];
+}
+
+static void testBlockStructure(){
+    TestBlockStructure *blkStructure = [TestBlockStructure new];
+    [blkStructure blockFire];
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        //Dealloc
+        
 //        testDeallocSimple();
 //        testDeallocCustomSubClass();
-        testDeallocWithProperty();
+//        testDeallocWithProperty();
+        
+        
+        //Block
+//        testWeakBlock();
+        testBlockStructure();
+
     }
     return 0;
 }

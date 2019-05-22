@@ -175,6 +175,8 @@
 		83F550E0155E030800E95D3B /* objc-cache-old.mm in Sources */ = {isa = PBXBuildFile; fileRef = 83F550DF155E030800E95D3B /* objc-cache-old.mm */; };
 		87BB4EA70EC39854005D08E1 /* objc-probes.d in Sources */ = {isa = PBXBuildFile; fileRef = 87BB4E900EC39633005D08E1 /* objc-probes.d */; };
 		9672F7EE14D5F488007CEC96 /* NSObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9672F7ED14D5F488007CEC96 /* NSObject.mm */; };
+		B0D41F6D2294DF2300E7EAC6 /* TestBlockWithWeak.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D41F6C2294DF2300E7EAC6 /* TestBlockWithWeak.m */; };
+		B0D41F7022951A8F00E7EAC6 /* TestBlockStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = B0D41F6F22951A8F00E7EAC6 /* TestBlockStructure.m */; };
 		E8923DA5116AB2820071B552 /* objc-block-trampolines.mm in Sources */ = {isa = PBXBuildFile; fileRef = E8923DA0116AB2820071B552 /* objc-block-trampolines.mm */; };
 		F9BCC71B205C68E800DD9AFC /* objc-blocktramps-arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = 8379996D13CBAF6F007C2B5F /* objc-blocktramps-arm64.s */; };
 /* End PBXBuildFile section */
@@ -373,6 +375,10 @@
 		83F550DF155E030800E95D3B /* objc-cache-old.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-cache-old.mm"; path = "runtime/objc-cache-old.mm"; sourceTree = "<group>"; };
 		87BB4E900EC39633005D08E1 /* objc-probes.d */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.dtrace; name = "objc-probes.d"; path = "runtime/objc-probes.d"; sourceTree = "<group>"; };
 		9672F7ED14D5F488007CEC96 /* NSObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSObject.mm; path = runtime/NSObject.mm; sourceTree = "<group>"; };
+		B0D41F6B2294DF2300E7EAC6 /* TestBlockWithWeak.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBlockWithWeak.h; sourceTree = "<group>"; };
+		B0D41F6C2294DF2300E7EAC6 /* TestBlockWithWeak.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBlockWithWeak.m; sourceTree = "<group>"; };
+		B0D41F6E22951A8F00E7EAC6 /* TestBlockStructure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBlockStructure.h; sourceTree = "<group>"; };
+		B0D41F6F22951A8F00E7EAC6 /* TestBlockStructure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBlockStructure.m; sourceTree = "<group>"; };
 		BC8B5D1212D3D48100C78A5B /* libauto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libauto.dylib; path = /usr/lib/libauto.dylib; sourceTree = "<absolute>"; };
 		D2AAC0630554660B00DB518D /* libobjc.A.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libobjc.A.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8923D9C116AB2820071B552 /* objc-blocktramps-i386.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; name = "objc-blocktramps-i386.s"; path = "runtime/objc-blocktramps-i386.s"; sourceTree = "<group>"; };
@@ -665,6 +671,7 @@
 		30466D8521B665A500DA7B9D /* debug-objc */ = {
 			isa = PBXGroup;
 			children = (
+				B0D41F6A2294DF0D00E7EAC6 /* Block */,
 				4DD886562285CE5900C88DD9 /* Dealloc */,
 				30466D8621B665A500DA7B9D /* main.m */,
 			);
@@ -774,6 +781,17 @@
 				39ABD71F12F0B61800D1054C /* objc-weak.h */,
 			);
 			name = "Project Headers";
+			sourceTree = "<group>";
+		};
+		B0D41F6A2294DF0D00E7EAC6 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				B0D41F6B2294DF2300E7EAC6 /* TestBlockWithWeak.h */,
+				B0D41F6C2294DF2300E7EAC6 /* TestBlockWithWeak.m */,
+				B0D41F6E22951A8F00E7EAC6 /* TestBlockStructure.h */,
+				B0D41F6F22951A8F00E7EAC6 /* TestBlockStructure.m */,
+			);
+			path = Block;
 			sourceTree = "<group>";
 		};
 		F9BCC72A205C6A1600DD9AFC /* Frameworks */ = {
@@ -1043,7 +1061,9 @@
 				4DD8866B2287D5AB00C88DD9 /* TestObjectWithProperty+test.m in Sources */,
 				30466D8721B665A500DA7B9D /* main.m in Sources */,
 				4DD8865C2285DAD300C88DD9 /* TestObject2.m in Sources */,
+				B0D41F7022951A8F00E7EAC6 /* TestBlockStructure.m in Sources */,
 				4DD8865F2285DD8E00C88DD9 /* TestObjectWithProperty.m in Sources */,
+				B0D41F6D2294DF2300E7EAC6 /* TestBlockWithWeak.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
