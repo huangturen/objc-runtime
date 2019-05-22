@@ -25,12 +25,16 @@ void (^globalBlock) (void) = ^{
     count++;
     
     
-    __weak void(^myCustomBlk2)(void) = ^{
+   void(^myCustomBlk2)(void) = ^{
         NSLog(@"In Block: %d", count++);
     };
     
     void(^myCustomBlk3)(void) = ^{
         NSLog(@"Global block");
+    };
+    
+    void(^myCustomBlk4)(NSInteger a) = ^(NSInteger a){
+        NSLog(@"Global block : %@,%@", @(a),@(g_count++));
     };
     
     //global block，
@@ -44,6 +48,8 @@ void (^globalBlock) (void) = ^{
     
     //globalBlock
     myCustomBlk3();
+    
+    myCustomBlk4(4);
 
 }
 

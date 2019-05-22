@@ -28,13 +28,6 @@ typedef void(^bt)(void);
         NSLog(@"num:%@",@(i));
     };
     
-//    BOOL isObj = [((id)bt) isKindOfClass:[NSObject class]];
-    NSObject *obj = [NSObject new];
-    BOOL isClass0 = object_isClass(obj);
-    
-    BOOL isClass = object_isClass(bt);
-    const char * name = object_getClassName(bt);
-    Class cls = object_getClass(bt);
     self.a = bt;
     self.b = bt;
     self.c = bt;
