@@ -92,6 +92,7 @@
 		393CEAC60DC69E67000B69DE /* objc-references.h in Headers */ = {isa = PBXBuildFile; fileRef = 393CEAC50DC69E67000B69DE /* objc-references.h */; };
 		39ABD72312F0B61800D1054C /* objc-weak.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ABD71F12F0B61800D1054C /* objc-weak.h */; };
 		39ABD72412F0B61800D1054C /* objc-weak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 39ABD72012F0B61800D1054C /* objc-weak.mm */; };
+		4D3581E722AA5FCE0025EDCC /* TestObjectWithAssociateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3581E622AA5FCE0025EDCC /* TestObjectWithAssociateObject.m */; };
 		4DD886592285CE7100C88DD9 /* TestObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD886582285CE7100C88DD9 /* TestObject1.m */; };
 		4DD8865C2285DAD300C88DD9 /* TestObject2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8865B2285DAD300C88DD9 /* TestObject2.m */; };
 		4DD8865F2285DD8E00C88DD9 /* TestObjectWithProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8865E2285DD8E00C88DD9 /* TestObjectWithProperty.m */; };
@@ -283,6 +284,8 @@
 		393CEAC50DC69E67000B69DE /* objc-references.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "objc-references.h"; path = "runtime/objc-references.h"; sourceTree = "<group>"; };
 		39ABD71F12F0B61800D1054C /* objc-weak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "objc-weak.h"; path = "runtime/objc-weak.h"; sourceTree = "<group>"; };
 		39ABD72012F0B61800D1054C /* objc-weak.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-weak.mm"; path = "runtime/objc-weak.mm"; sourceTree = "<group>"; };
+		4D3581E522AA5FCE0025EDCC /* TestObjectWithAssociateObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObjectWithAssociateObject.h; sourceTree = "<group>"; };
+		4D3581E622AA5FCE0025EDCC /* TestObjectWithAssociateObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObjectWithAssociateObject.m; sourceTree = "<group>"; };
 		4DD886572285CE7100C88DD9 /* TestObject1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObject1.h; sourceTree = "<group>"; };
 		4DD886582285CE7100C88DD9 /* TestObject1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObject1.m; sourceTree = "<group>"; };
 		4DD8865A2285DAD300C88DD9 /* TestObject2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObject2.h; sourceTree = "<group>"; };
@@ -671,11 +674,21 @@
 		30466D8521B665A500DA7B9D /* debug-objc */ = {
 			isa = PBXGroup;
 			children = (
+				4D3581E422AA5FAA0025EDCC /* AssociateObject */,
 				B0D41F6A2294DF0D00E7EAC6 /* Block */,
 				4DD886562285CE5900C88DD9 /* Dealloc */,
 				30466D8621B665A500DA7B9D /* main.m */,
 			);
 			path = "debug-objc";
+			sourceTree = "<group>";
+		};
+		4D3581E422AA5FAA0025EDCC /* AssociateObject */ = {
+			isa = PBXGroup;
+			children = (
+				4D3581E522AA5FCE0025EDCC /* TestObjectWithAssociateObject.h */,
+				4D3581E622AA5FCE0025EDCC /* TestObjectWithAssociateObject.m */,
+			);
+			path = AssociateObject;
 			sourceTree = "<group>";
 		};
 		4DD886562285CE5900C88DD9 /* Dealloc */ = {
@@ -1057,6 +1070,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D3581E722AA5FCE0025EDCC /* TestObjectWithAssociateObject.m in Sources */,
 				4DD886592285CE7100C88DD9 /* TestObject1.m in Sources */,
 				4DD8866B2287D5AB00C88DD9 /* TestObjectWithProperty+test.m in Sources */,
 				30466D8721B665A500DA7B9D /* main.m in Sources */,

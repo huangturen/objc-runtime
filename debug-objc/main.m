@@ -12,6 +12,7 @@
 #import "TestObjectWithProperty+test.h"
 #import "TestBlockWithWeak.h"
 #import "TestBlockStructure.h"
+#import "TestObjectWithAssociateObject.h"
 
 static void testDeallocSimple(){
     TestObject1 *obj1 = [TestObject1 new];
@@ -43,6 +44,13 @@ static void testBlockStructure(){
     [blkStructure blockFire];
 }
 
+static void testAssociateObject(){
+    TestObjectWithAssociateObject *associate = [TestObjectWithAssociateObject new];
+    associate.associateObject = @"test";
+    
+    NSLog(@"%@",associate.associateObject);
+}
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         //Dealloc
@@ -54,7 +62,10 @@ int main(int argc, const char * argv[]) {
         
         //Block
 //        testWeakBlock();
-        testBlockStructure();
+//        testBlockStructure();
+        
+        //AssociateObject
+        testAssociateObject();
 
     }
     return 0;
