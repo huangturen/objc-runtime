@@ -93,6 +93,7 @@
 		39ABD72312F0B61800D1054C /* objc-weak.h in Headers */ = {isa = PBXBuildFile; fileRef = 39ABD71F12F0B61800D1054C /* objc-weak.h */; };
 		39ABD72412F0B61800D1054C /* objc-weak.mm in Sources */ = {isa = PBXBuildFile; fileRef = 39ABD72012F0B61800D1054C /* objc-weak.mm */; };
 		4D3581E722AA5FCE0025EDCC /* TestObjectWithAssociateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3581E622AA5FCE0025EDCC /* TestObjectWithAssociateObject.m */; };
+		4D3581EB22AA6EF80025EDCC /* TestMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D3581EA22AA6EF80025EDCC /* TestMethod.m */; };
 		4DD886592285CE7100C88DD9 /* TestObject1.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD886582285CE7100C88DD9 /* TestObject1.m */; };
 		4DD8865C2285DAD300C88DD9 /* TestObject2.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8865B2285DAD300C88DD9 /* TestObject2.m */; };
 		4DD8865F2285DD8E00C88DD9 /* TestObjectWithProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD8865E2285DD8E00C88DD9 /* TestObjectWithProperty.m */; };
@@ -286,6 +287,8 @@
 		39ABD72012F0B61800D1054C /* objc-weak.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = "objc-weak.mm"; path = "runtime/objc-weak.mm"; sourceTree = "<group>"; };
 		4D3581E522AA5FCE0025EDCC /* TestObjectWithAssociateObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObjectWithAssociateObject.h; sourceTree = "<group>"; };
 		4D3581E622AA5FCE0025EDCC /* TestObjectWithAssociateObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObjectWithAssociateObject.m; sourceTree = "<group>"; };
+		4D3581E922AA6EF80025EDCC /* TestMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestMethod.h; sourceTree = "<group>"; };
+		4D3581EA22AA6EF80025EDCC /* TestMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMethod.m; sourceTree = "<group>"; };
 		4DD886572285CE7100C88DD9 /* TestObject1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObject1.h; sourceTree = "<group>"; };
 		4DD886582285CE7100C88DD9 /* TestObject1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestObject1.m; sourceTree = "<group>"; };
 		4DD8865A2285DAD300C88DD9 /* TestObject2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObject2.h; sourceTree = "<group>"; };
@@ -674,6 +677,7 @@
 		30466D8521B665A500DA7B9D /* debug-objc */ = {
 			isa = PBXGroup;
 			children = (
+				4D3581E822AA6EB70025EDCC /* Method */,
 				4D3581E422AA5FAA0025EDCC /* AssociateObject */,
 				B0D41F6A2294DF0D00E7EAC6 /* Block */,
 				4DD886562285CE5900C88DD9 /* Dealloc */,
@@ -689,6 +693,15 @@
 				4D3581E622AA5FCE0025EDCC /* TestObjectWithAssociateObject.m */,
 			);
 			path = AssociateObject;
+			sourceTree = "<group>";
+		};
+		4D3581E822AA6EB70025EDCC /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				4D3581E922AA6EF80025EDCC /* TestMethod.h */,
+				4D3581EA22AA6EF80025EDCC /* TestMethod.m */,
+			);
+			path = Method;
 			sourceTree = "<group>";
 		};
 		4DD886562285CE5900C88DD9 /* Dealloc */ = {
@@ -1075,6 +1088,7 @@
 				4DD8866B2287D5AB00C88DD9 /* TestObjectWithProperty+test.m in Sources */,
 				30466D8721B665A500DA7B9D /* main.m in Sources */,
 				4DD8865C2285DAD300C88DD9 /* TestObject2.m in Sources */,
+				4D3581EB22AA6EF80025EDCC /* TestMethod.m in Sources */,
 				B0D41F7022951A8F00E7EAC6 /* TestBlockStructure.m in Sources */,
 				4DD8865F2285DD8E00C88DD9 /* TestObjectWithProperty.m in Sources */,
 				B0D41F6D2294DF2300E7EAC6 /* TestBlockWithWeak.m in Sources */,
@@ -1202,6 +1216,7 @@
 					"-interposable_list",
 					"-Xlinker",
 					interposable.txt,
+					"-all_load",
 				);
 				"OTHER_LDFLAGS[sdk=iphonesimulator*][arch=*]" = (
 					"-lc++abi",
@@ -1209,6 +1224,7 @@
 					"-interposable_list",
 					"-Xlinker",
 					interposable.txt,
+					"-all_load",
 				);
 				"OTHER_LDFLAGS[sdk=macosx*]" = (
 					"-lc++abi",
@@ -1224,6 +1240,7 @@
 					"-interposable_list",
 					"-Xlinker",
 					interposable.txt,
+					"-all_load",
 				);
 				OTHER_TAPI_FLAGS = "-exclude-public-header $(SRCROOT)/runtime/module/ObjectiveC.apinotes -exclude-public-header $(SRCROOT)/runtime/module/module.modulemap -Xparser -Wno-deprecated-declarations -Xparser -Wno-unavailable-declarations -Xparser -D_OBJC_PRIVATE_H_=1 -DOBJC_DECLARE_SYMBOLS=1";
 				PRIVATE_HEADERS_FOLDER_PATH = /usr/local/include/objc;

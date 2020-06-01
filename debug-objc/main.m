@@ -13,6 +13,7 @@
 #import "TestBlockWithWeak.h"
 #import "TestBlockStructure.h"
 #import "TestObjectWithAssociateObject.h"
+#import "TestMethod.h"
 
 static void testDeallocSimple(){
     TestObject1 *obj1 = [TestObject1 new];
@@ -51,6 +52,18 @@ static void testAssociateObject(){
     NSLog(@"%@",associate.associateObject);
 }
 
+static void testMethod(){
+    TestMethod *methodTestor = [TestMethod new];
+//    associate.associateObject = @"test";
+    BOOL test1 = [TestMethod respondsToSelector:@selector(testClassMethod)];
+    BOOL test2 = [TestMethod respondsToSelector:@selector(test)];
+
+    [TestMethod testClassMethod];
+    [TestMethod testCategoryClassMethod];
+    NSLog(@"%@",methodTestor);
+}
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         //Dealloc
@@ -65,7 +78,10 @@ int main(int argc, const char * argv[]) {
 //        testBlockStructure();
         
         //AssociateObject
-        testAssociateObject();
+//        testAssociateObject();
+        
+        //Class method & instance Method
+        testMethod();
 
     }
     return 0;
