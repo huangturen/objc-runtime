@@ -82,7 +82,6 @@ int main(int argc, const char * argv[]) {
         
         //Class method & instance Method
         testMethod();
-
     }
     return 0;
 }
